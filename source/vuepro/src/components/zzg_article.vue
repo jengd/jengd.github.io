@@ -7,11 +7,11 @@
 			<div class="bloglist left">
 				<!--wz-->
 				<div class="wz" v-for="item in items">
-					<h3>关于响应式布局</h3>
-					<p class="dateview"><span>2017-07-04</span><span>作者：虫师</span><span>分类：[<a href="#">web前端</a>]</span></p>
+					<h3>准备好迎接你的“新同事”了吗？他叫人工智能</h3>
+					<p class="dateview"><span>2017-11-04</span><span>作者：虫师</span><span>分类：[<a href="#">web前端</a>]</span></p>
 					<figure><img src="images/001.jpg"></figure>
 					<ul>
-						<p>随着互联网的快速发展，以及html5+css3的迅速崛起。渐渐的响应式布局，也会慢慢的出现在我们的视野里，身为专业的web前端，还不学习新技术你就out啦！为什么这样说呢？因为响应式布局能同时兼容多个终端，比如（手机、平板、PC）...</p>
+						<p>去年秋天，谷歌翻译推出了一个全新升级的人工智能翻译引擎，该引擎翻译文本有时与人工翻译文本“几乎无法区分”。约斯特·赛驰只能不停转动他的眼睛。这位德国人已经做了20年的职业翻译，他一次又一次地听说，他的职业将受到自动化技术进步的威胁。他发现，每一次都是夸张的炒作，谷歌翻译的改头换面也不例外。他认为，这肯定不是翻译的关键...</p>
 						<a title="阅读全文" href="/" target="_blank" class="readmore">阅读全文>></a>
 					</ul>
 					<div class="clear"></div>
@@ -26,8 +26,8 @@
 					<img src="images/my.jpg" width="200" height="200" alt="博主">
 					<ul>
 						<li>博主：虫师</li>
-						<li>职业:web前端、php后台攻城师</li>
-						<li>简介：一个不断学习和研究，web前端和php技术的90后草根人士.</li>
+						<li>职业:充满梦想的键盘工作者</li>
+						<li>简介：对技术转化为利润具有强烈的欲望</li>
 						<li></li>
 					</ul>
 				</div>
@@ -39,23 +39,13 @@
 						<p>点击<span>排行</span></p>
 					</h3>
 					<ul class="paih">
-						<li><a href="/" title="如何建立个人博客" target="_blank">如何建立个人博客</a></li>
-						<li><a href="/" title="html5标签" target="_blank">html5标签</a></li>
-						<li><a href="/" title="一个网站的开发流程" target="_blank">一个网站的开发流程</a></li>
-						<li><a href="/" title="做网站到底需要什么?" target="_blank">做网站到底需要什么?</a></li>
-						<li><a href="/" title="企业做网站具体流程步骤" target="_blank">企业做网站具体流程步骤</a></li>
+						<li><a href="/" title="人工智能带来的高的超人类生产力" target="_blank">人工智能带来的高的超人类生产力</a></li>
+						<li><a href="/" title="神经机器翻译" target="_blank">神经机器翻译</a></li>
+						<li><a href="/" title="机器可以是有创造力的，而且它们是有创造力的" target="_blank">机器可以是有创造力的，而且它们是有创造力的</a></li>
+						<li><a href="/" title="人工智能正在快速掌握我们长期以来一直视为机器无法完成的任务?" target="_blank">人工智能正在快速掌握我们长期以来一直视为机器无法完成的任务?</a></li>
+						<li><a href="/" title="创造就业机会" target="_blank">创造就业机会</a></li>
 					</ul>
-					<h3>
-						<p>用户<span>关注</span></p>
-					</h3>
-					<ul class="rank">
-						<li><a href="/" title="如何建立个人博客" target="_blank">如何建立个人博客</a></li>
-						<li><a href="/" title="一个网站的开发流程" target="_blank">一个网站的开发流程</a></li>
-						<li><a href="/" title="关键词排名的三个时期" target="_blank">关键词排名的三个时期</a></li>
-						<li><a href="/" title="做网站到底需要什么?" target="_blank">做网站到底需要什么?</a></li>
-						<li><a href="/" title="关于响应式布局" target="_blank">关于响应式布局</a></li>
-						<li><a href="/" title="html5标签" target="_blank">html5标签</a></li>
-					</ul>
+				
 
 					<h3 class="links">
 						<p>友情<span>链接</span></p>
