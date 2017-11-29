@@ -2094,7 +2094,7 @@ var render = function() {
         { staticClass: "bloglist left" },
         _vm._l(_vm.items, function(item) {
           return _c("div", { staticClass: "wz" }, [
-            _c("h3", [_vm._v("准备好迎接你的“新同事”了吗？他叫人工智能")]),
+            _c("h3", [_vm._v("准备好迎接你的“新同事”了吗？他叫人工智能...")]),
             _vm._v(" "),
             _vm._m(1, true, false),
             _vm._v(" "),
