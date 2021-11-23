@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>Git学习记录 ｜ JenG</title>
+	
+    
+    
+    <meta name="description" content="1、第一次下载安装需要配置用户跟邮箱 $ git config --global user.name &amp;#34;zhangsan&amp;#34; $ git config --global user.email &amp;#34;zhangsan@163.com&amp;#34; 2、git 添加文件提交 (如添加README.md文件) $ git add README.md $ git commit -m &amp;#34;add README.md&amp;#34; $ git push -u origin master（输入用户名密码） 3、git 删除远程文件 （如" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>JenG</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">巴比伦的囚徒在埃及受苦，摩西带领众人走出埃及</p>
+            <div class="my_socials">
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/git%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/'>Git学习记录</a></h2>
+                        <span class="date">2021.05.18</span>
+                    </div>
+                    <div class="post_content markdown"><h2 id="1第一次下载安装需要配置用户跟邮箱">1、第一次下载安装需要配置用户跟邮箱</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global user.name &#34;zhangsan&#34; 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global user.email &#34;zhangsan@163.com&#34;
+</code></pre></div><h2 id="2git-添加文件提交-如添加readmemd文件">2、git 添加文件提交 (如添加README.md文件)</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add README.md
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git commit -m &#34;add README.md&#34;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git push -u origin master（输入用户名密码） 
+</code></pre></div><h2 id="3git-删除远程文件--如删除log文件">3、git 删除远程文件  （如删除log文件）</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">执行删除
+$ git rm log -r -f  
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">同步删除操作到远程文件
+$ git commit -m &#34;删除文件&#34;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">提交分支:
+$ git push origin master  （输入用户名密码）  
+</code></pre></div><h1 id="-一个明智地追求快乐的人除了培养生活赖以支撑的主要兴趣之外总得设法培养其他许多闲情逸致-罗素">💡 一个明智地追求快乐的人，除了培养生活赖以支撑的主要兴趣之外，总得设法培养其他许多闲情逸致。—— 罗素</h1>
+<h2 id="基本命令">基本命令</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git add  文件名称   #（添加指定文件到缓存区） /  git add .   #（添加所有文件到缓存区）
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git commit -m &#34;修改的文字说明&#34;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git  log   #查看日志， git reflog #查看撤销后的所有命令
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git reset --hard hash值     #重置到指定的版本，可以与git。log结合使用
+工作区（Working Directory）
+暂存区（stage）你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。
+</code></pre></div><h2 id="开始进阶啦">开始进阶啦</h2>
+<h2 id="money-never-sleepso-do-we">money never sleep，so do we</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git checkout -- file 撤销文件操作
+【 精彩片段 1 】
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时
+用命令git checkout -- file。# git checkout -- readme.md
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步
+第一步用命令git reset HEAD &lt;file&gt;，就回到了场景1
+第二步按场景1操作。#git reset HEAD readme.md.  git checkout -- readme.md  
+（好像直接用  git reset  --hard  xxxxhash值 恢复到指定版本也是可以的）
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交
+参考版本回退一节，不过前提是没有推送到远程库。# git reset  --hard  xxxxhash值
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">【删除文件 】譬如你在工作区删除了 test.txt，这时候需要执行 git rm text.txt
+然后再执行 git commit -m &#34;delete test.txt&#34; 操作
+如果是工作区误删除了test.txt文件操作，
+这时候可以从版本库里面恢复 ( git  checkout -- test.txt )
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">【 注意：从来没有被添加到版本库就被删除的文件，是无法恢复的！ 】
+
+</code></pre></div><h2 id="与远程-git-仓库结合">与远程 git 仓库结合</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">1、配置 ssh key 
+（#执行ssh-keygen，生成公钥私钥
+进入~/.ssh/id_rsa.pub 
+把公钥内容复制到 git 服务器的setting ssh_key 位置配置好）
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">2、添加远程仓库     git remote add origin git@你的远程git仓库地址
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">3、git push -u origin master 推送到远程服务器
+（origin是告诉git推送到远程的意思，之后可以把 -u 参数去掉，git push origin master）
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">  删除远程库
+  如果添加的时候地址写错了，或者就是想删除远程库
+  可以用git remote rm &lt;name&gt;命令。使用前，建议先用git remote -v查看远程库信息：
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git remote -vorigin  
+git@github.com:michaelliao/learn-git.git (fetch)origin  
+git@github.com:michaelliao/learn-git.git (push)
+然后，根据名字删除，比如删除origin：
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git remote rm origin
+此处的“删除”其实是解除了本地和远程的绑定关系，并不是物理上删除了远程库。
+远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。
+</code></pre></div><h2 id="创建合并分支">创建合并分支</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">查看分支：git branch
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">创建分支：git branch &lt;name&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">切换分支：git checkout &lt;name&gt;或者git switch &lt;name&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">创建+切换分支：git checkout -b &lt;name&gt;或者git switch -c &lt;name&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">合并某分支到当前分支：git merge &lt;name&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">删除分支：git branch -d &lt;name&gt;
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">强制删除分支   git branch -D &lt;name&gt;  （用大 D 哦）
+删除远程分支   git push origin --delete &lt;name&gt;
+拉取指定分支   git pull &lt;远程库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;  
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名）：
+git push origin develop:develop
+</code></pre></div><h2 id="冲突解决">冲突解决</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">当你在 dev 分支与 master 分支同时修改 README.md 时，两者同时执行了 add 跟 commit 操作。
+这时切回 master 分支，执行 git merge dev，想把 dev 分支合并到master，就会出现冲突提示。
+这时候需要你手动修改圈内的内容以解决冲突，然后在执行 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git add README.md , git commit -m &#39;xxxxx&#39;  再次提交
+</code></pre></div><h2 id="bug-分支修复">bug 分支修复</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">当手头工作没有完成时，先把工作现场git stash一下.
+然后去修复bug，修复后，再git stash pop，回到工作现场；
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git cherry-pick 4c805e2    #能复制一个特定的提交到当前分支
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">在 dev 分支中，如果执行 git push 失败
+原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">则需要执行 git branch --set-upstream-to=origin/dev dev
+在执行 git pull
+</code></pre></div><h2 id="git-打-tag">git 打 tag</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git tag v1.0
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">也可以指定 commit id，git tag v0.9  0e8a6002
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">查看tag 列表，git tag
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">查看指定tag，git show v1.0
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">删除tag ，git tag -d v0.1
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">推送tag到远程，git push origin v1.0
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">推送全部tag到远程，git push origin --tags
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">删除远程tag，1、先删除本地tag，git tag -d v0.1    
+2、从远程删除，git push origin :refs/tags/v0.1
+</code></pre></div><h2 id="关联两个仓库">关联两个仓库</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">1、先删除 git remote rm origin
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">2、添加 github 远程仓库，git remote add github git@xxxxx/learngit.git
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">3、添加 gitee 远程仓库，git remote add gitee git@xxxxxxxx/learngit.git
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">4、push 到 github 仓库， git push github master 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">5、push 到 gitee 仓库，git push gitee master 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">添加 ssh public key，git bash 
+执行  ssh-keygen，生成 id_rsa.pub，路径在 ~/.ssh/id_rsa.pub
+把该内容复制到 github 项目设置的 ssh_key，设置好
+然后可以愉快执行git push啦
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="/tags/git/">Git</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>出埃及记</span>
+    </div>
+</footer>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+<link href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+<script src="/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

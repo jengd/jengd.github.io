@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iptables on JenG</title>
+    <link>/tags/iptables/</link>
+    <description>Recent content in Iptables on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 May 2021 15:20:59 +0800</lastBuildDate><atom:link href="/tags/iptables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iptables防火墙学习</title>
+      <link>/posts/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 18 May 2021 15:20:59 +0800</pubDate>
+      
+      <guid>/posts/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0/</guid>
+      <description>iptables 表 filter 默认表 nat mangle raw iptable 链 INPUT OUTPUT PREROUTING FORWARD POSTROUTING 在指定表的指定链的尾部添加一条规则，-A选项表示在对应链的末尾添加规则，省略-t选项时，表示默认操作filter表中的规则 命令语法：iptables -t 表名 -A 链名 匹配条件</description>
+    </item>
+    
+  </channel>
+</rss>

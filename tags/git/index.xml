@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on JenG</title>
+    <link>/tags/git/</link>
+    <description>Recent content in Git on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 May 2021 15:20:37 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git学习记录</title>
+      <link>/posts/git%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 18 May 2021 15:20:37 +0800</pubDate>
+      
+      <guid>/posts/git%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>1、第一次下载安装需要配置用户跟邮箱 $ git config --global user.name &amp;#34;zhangsan&amp;#34; $ git config --global user.email &amp;#34;zhangsan@163.com&amp;#34; 2、git 添加文件提交 (如添加README.md文件) $ git add README.md $ git commit -m &amp;#34;add README.md&amp;#34; $ git push -u origin master（输入用户名密码） 3、git 删除远程文件 （如</description>
+    </item>
+    
+  </channel>
+</rss>

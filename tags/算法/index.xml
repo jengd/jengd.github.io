@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on JenG</title>
+    <link>/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Jun 2021 17:24:26 +0800</lastBuildDate><atom:link href="/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试</title>
+      <link>/posts/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Fri, 11 Jun 2021 17:24:26 +0800</pubDate>
+      
+      <guid>/posts/%E9%9D%A2%E8%AF%95/</guid>
+      <description>消息队列 go channel go 锁 mysql优化 mysql主从 redis集群 CAP redis原子性 竞争饥饿模式 \ id a b</description>
+    </item>
+    
+    <item>
+      <title>算法：合并K个升序链表</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 27 May 2021 18:04:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
+      <description>给你一个链表数组，每个链表都已经按升序排列。 请你将所有链表合并到一个升序链表中，返回合并后的链表。 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { if len(lists)==0{ return nil } result:=lists[0] for i:=1;i&amp;lt;len(lists);i++{ result=Merge(result,lists[i]) //每个都合并 } return result } func Merge(l1 *ListNode,l2 *ListNode)*ListNode{ //</description>
+    </item>
+    
+    <item>
+      <title>算法：两数相加</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
+      <pubDate>Wed, 26 May 2021 09:28:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
+      <description>两数相加 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。 请你将两个数相加，并以相同形式返回一个表示和的链表。 你可以假设除了数字 0 之外，这两个</description>
+    </item>
+    
+    <item>
+      <title>算法：两数之和</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Mon, 24 May 2021 13:27:04 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。 你可以</description>
+    </item>
+    
+    <item>
+      <title>算法：力扣160,相交链表</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E5%8A%9B%E6%89%A3160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 20 May 2021 09:26:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E5%8A%9B%E6%89%A3160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</guid>
+      <description>编写一个程序，找到两个单链表相交的起始节点。 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func getIntersectionNode(headA, headB *ListNode) *ListNode { curA, curB := headA, headB //当A链表不等于B链表，一直循环，如果两个链表相交 //它两必定相等，如果不相交，最后为nil</description>
+    </item>
+    
+  </channel>
+</rss>

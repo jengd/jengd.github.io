@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>controller、deployment、service入门 ｜ JenG</title>
+	
+    
+    
+    <meta name="description" content="kube-controller-manager 是什么 在master中。 kube-controller-manager负责节点管理、pod复制和endpoint创建. 监控集群中各种资源的状态使之和定义的状态保持一致,.\ 如: 节点控制器（Node C" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>JenG</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">巴比伦的囚徒在埃及受苦，摩西带领众人走出埃及</p>
+            <div class="my_socials">
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/deploymentcontrollerservice%E5%85%A5%E9%97%A8/'>controller、deployment、service入门</a></h2>
+                        <span class="date">2021.06.11</span>
+                    </div>
+                    <div class="post_content markdown"><h4 id="kube-controller-manager-是什么">kube-controller-manager 是什么</h4>
+<p>在master中。<br>
+kube-controller-manager负责节点管理、pod复制和endpoint创建.<br>
+监控集群中各种资源的状态使之和定义的状态保持一致,.\</p>
+<p>如:<br>
+节点控制器（Node Controller）: 负责在节点出现故障时进行通知和响应。\</p>
+<p>副本控制器（Replication Controller）: 负责为系统中的每个副本控制器对象维护正<br>
+确数量的 Pod。(现在是Deployment Controller+Replication Set)\</p>
+<p>还有更多\</p>
+<h4 id="怎么创建-deployment">怎么创建 deployment</h4>
+<p>只需要执行 kubectl 命令，如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl create -f ngx.yaml
+</code></pre></div><p>ngx.yaml 为对应 yaml 文件，内容如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myngx
+  namespace: myweb
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginxtest
+          image: nginx:1.18-alpine
+          # 只有镜像不存在时进行镜像拉取
+          imagePullPolicy: IfNotPresent
+          ports:
+            # Pod 端口
+            - containerPort: 80
+</code></pre></div><p>执行命令完毕后，查看 deployment 命令如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get deployment -n myweb
+</code></pre></div><p>-n myweb 指定命名空间
+得到如下结果</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[zzg@god1 ctl]$ kubectl get deployment -n myweb
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+etcd      1/1     1            1           2d
+etcd2     1/1     1            1           26h
+etcd3     1/1     1            1           25h
+goapi     1/1     1            1           2d9h
+mygo      1/1     1            1           2d7h
+mynginx   1/1     1            1           9h
+myngx     1/1     1            1           10m
+myredis   1/1     1            1           2d7h
+mytest    1/1     1            1           2d7h
+redis2    1/1     1            1           2d7h
+</code></pre></div><h4 id="如何删除-deployment">如何删除 deployment</h4>
+<p>执行命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl delete deployment myngx -n myweb
+</code></pre></div><p>myngx 为要删除的 deployment</p>
+<h4 id="怎么创建服务实现上面创建的-deployment-服务发现呢">怎么创建服务，实现上面创建的 deployment 服务发现呢</h4>
+<p>这时需要生成对应格式的 yaml 文件
+文件内容如下:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apiVersion: v1
+kind: Service
+metadata:
+  name: myngx-service  #服务名称
+  namespace: myweb
+spec:
+  selector:
+    app: nginx   #这个和前面的deployment app对应
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP    #ClusterIP、NodePort和LoadBalancer
+</code></pre></div><p>然后执行名称生成服务</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl create -f ngxsvc.yaml
+
+也可以使用：
+kubectl create -f ngxsvc.yaml
+使用 apply 时不存在则生成，存在则修改 
+</code></pre></div><h4 id="查看生成的服务列表">查看生成的服务列表</h4>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get svc -n myweb
+</code></pre></div><p>ok，完毕，搞定，收工，准备过端午节啦，哈哈哈 &hellip;&hellip;</p>
+</div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="/tags/k8s/">k8s</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>出埃及记</span>
+    </div>
+</footer>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+<link href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+<script src="/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

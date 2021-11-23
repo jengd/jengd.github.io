@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on JenG</title>
+    <link>/tags/redis/</link>
+    <description>Recent content in redis on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Jul 2021 08:37:43 +0800</lastBuildDate><atom:link href="/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis删除策略</title>
+      <link>/posts/redis%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Fri, 30 Jul 2021 08:37:43 +0800</pubDate>
+      
+      <guid>/posts/redis%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/</guid>
+      <description>惰性删除 概念： 在获取某个 key 的时候，Redis 会检查下这个 key 是否过期了，如果过期了则删除，且不会返回任何东西。 优点：不会删除其他键，所以不会花费任何 CPU 时间在其他无关的过期键上。 缺点：大量过期键未被访问，</description>
+    </item>
+    
+  </channel>
+</rss>

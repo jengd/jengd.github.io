@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>手工构建最基本的swoole镜像(基于alpine、PHP7) ｜ JenG</title>
+	
+    
+    
+    <meta name="description" content="docker run -it --rm php:7.3-alpine3.8 php -v run运行 it交互式 &amp;ndash;rm容器停止删除 php:7.3-alpine3.8 运行哪个容器哪个标签 php -v 执行命令** 进入docker容器 docker attach xxx 运行多条命令 docker run -it --rm php:7.3-alpine3.8 sh -c &amp;#34;php -v &amp;amp;&amp;amp; php -m&amp;#34; 启动一容器并且执行sh docker run -it --rm php:7.3-alpine3.8 sh 容" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>JenG</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">巴比伦的囚徒在埃及受苦，摩西带领众人走出埃及</p>
+            <div class="my_socials">
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/%E6%89%8B%E5%B7%A5%E6%9E%84%E5%BB%BA%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84swoole%E9%95%9C%E5%83%8F%E5%9F%BA%E4%BA%8Ealpinephp7/'>手工构建最基本的swoole镜像(基于alpine、PHP7)</a></h2>
+                        <span class="date">2021.05.28</span>
+                    </div>
+                    <div class="post_content markdown"><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it --rm php:7.3-alpine3.8 php -v
+</code></pre></div><p>run运行 it交互式 &ndash;rm容器停止删除 php:7.3-alpine3.8 运行哪个容器哪个标签 php -v 执行命令**</p>
+<h3 id="进入docker容器">进入docker容器</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker attach xxx
+</code></pre></div><h3 id="运行多条命令">运行多条命令</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it --rm php:7.3-alpine3.8 sh -c &#34;php -v &amp;&amp; php -m&#34;
+</code></pre></div><h3 id="启动一容器并且执行sh">启动一容器并且执行sh</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it --rm php:7.3-alpine3.8 sh
+</code></pre></div><h3 id="容器里面yum安装">容器里面yum安装</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apk add xxx #相当于 yum install xxx
+</code></pre></div><h3 id="docker-alpine更新源">docker alpine更新源</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">1、echo http://mirrors.ustc.edu.cn/alpine/v3.8/main/ &gt; /etc/apk/repositories
+2、echo http://mirrors.ustc.edu.cn/alpine/v3.8/community/ &gt;&gt; /etc/apk/repositories
+3、apk update &amp;&amp; apk upgrade
+</code></pre></div><h3 id="安装其他">安装其他</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apk add m4 autoconf make
+apk add gcc g++ openssl openssl-dev
+apk add linux-headers
+</code></pre></div><h3 id="建一个容器安装swoole然后commit">建一个容器，安装swoole，然后commit</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">1、docker run -it --name test php:7.3-alpine3.8 sh
+2、pecl install swoole-4.3.1 安装swoole
+3、docker-php-ext-enable swoole
+</code></pre></div><p>4、退出容器，在centos执行commit</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker commit test swoole:4.3.1
+</code></pre></div><p>5、文件路径映射命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run --privileged=true -it --name seckill \
+-p 80:80 \
+-v /storage/shared/seckill:/pro \
+swoole:4.3.1 sh
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/main/ &gt; /etc/apk/repositories RUN echo http://mirrors.ustc.edu.cn/alpine/v3.8/community &gt;&gt; /etc/apk/repositories
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">https://mirrors.ustc.edu.cn/alpine/v3.8/main
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">https://mirrors.ustc.edu.cn/alpine/v3.8/community
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">FROM php:7.3-alpine3.8
+RUN echo &#34;https://mirrors.aliyun.com/alpine/v3.6/main/&#34; &gt; /etc/apk/repositories
+RUN echo &#34;https://mirrors.aliyun.com/alpine/v3.6/community/&#34; &gt;&gt; /etc/apk/repositories
+RUN apk update &amp;&amp; apk upgrade
+RUN apk add m4 autoconf make gcc g++
+RUN linux-headers
+ADD ./swoole-2.1.2.tgz /tmp/
+RUN cd /tmp/swoole-2.1.2.tgz &amp;&amp; phpize &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
+RUN docker-php-ext-enable swoole
+CMD [&#34;php&#34;, &#34;-m&#34;]
+</code></pre></div><h3 id="编译镜像">编译镜像</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker build -t myswoole1.0 .
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="/tags/docker/">docker</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>出埃及记</span>
+    </div>
+</footer>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+<link href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+<script src="/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

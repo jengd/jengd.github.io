@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>Iptables防火墙学习 ｜ JenG</title>
+	
+    
+    
+    <meta name="description" content="iptables 表 filter 默认表 nat mangle raw iptable 链 INPUT OUTPUT PREROUTING FORWARD POSTROUTING 在指定表的指定链的尾部添加一条规则，-A选项表示在对应链的末尾添加规则，省略-t选项时，表示默认操作filter表中的规则 命令语法：iptables -t 表名 -A 链名 匹配条件" />
+    
+
+    
+    
+    <meta name="keywords" content="Hugo, theme, zozo" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">Archive</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">Tags</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>JenG</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">巴比伦的囚徒在埃及受苦，摩西带领众人走出埃及</p>
+            <div class="my_socials">
+                
+                <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='/posts/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0/'>Iptables防火墙学习</a></h2>
+                        <span class="date">2021.05.18</span>
+                    </div>
+                    <div class="post_content markdown"><h2 id="iptables-表">iptables 表</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">filter  默认表
+nat
+mangle
+raw
+</code></pre></div><h2 id="iptable-链">iptable 链</h2>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">INPUT
+OUTPUT
+PREROUTING
+FORWARD
+POSTROUTING
+
+</code></pre></div><h3 id="在指定表的指定链的尾部添加一条规则-a选项表示在对应链的末尾添加规则省略-t选项时表示默认操作filter表中的规则">在指定表的指定链的尾部添加一条规则，-A选项表示在对应链的末尾添加规则，省略-t选项时，表示默认操作filter表中的规则</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -A 链名 匹配条件 -j 动作
+示例：iptables -t filter -A INPUT -s 192.168.1.146 -j DROP
+</code></pre></div><h3 id="在指定表的指定链的首部添加一条规则-i选型表示在对应链的开头添加规则">在指定表的指定链的首部添加一条规则，-I选型表示在对应链的开头添加规则</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -I 链名 匹配条件 -j 动作
+示例：iptables -t filter -I INPUT -s 192.168.1.146 -j ACCEPT
+</code></pre></div><h3 id="在指定表的指定链的指定位置添加一条规则">在指定表的指定链的指定位置添加一条规则</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -I 链名 规则序号 匹配条件 -j 动作
+示例：iptables -t filter -I INPUT 5 -s 192.168.1.146 -j REJECT
+</code></pre></div><h3 id="设置指定表的指定链的默认策略默认动作并非添加规则">设置指定表的指定链的默认策略（默认动作），并非添加规则。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -P 链名 动作
+示例：iptables -t filter -P FORWARD ACCEPT
+</code></pre></div><h4 id="上例表示将filter表中forward链的默认策略设置为accept">上例表示将filter表中FORWARD链的默认策略设置为ACCEPT</h4>
+<h2 id="删除规则">删除规则</h2>
+<h3 id="按照规则序号删除规则删除指定表的指定链的指定规则-d选项表示删除对应链中的规则">按照规则序号删除规则，删除指定表的指定链的指定规则，-D选项表示删除对应链中的规则。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -D 链名 规则序号
+示例：iptables -t filter -D INPUT 3
+</code></pre></div><h4 id="上述示例表示删除filter表中input链中序号为3的规则">上述示例表示删除filter表中INPUT链中序号为3的规则。</h4>
+<h3 id="按照具体的匹配条件与动作删除规则删除指定表的指定链的指定规则">按照具体的匹配条件与动作删除规则，删除指定表的指定链的指定规则。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -D 链名 匹配条件 -j 动作
+示例：iptables -t filter -D INPUT -s 192.168.1.146 -j DROP
+</code></pre></div><h4 id="上述示例表示删除filter表中input链中源地址为1921681146并且动作为drop的规则">上述示例表示删除filter表中INPUT链中源地址为192.168.1.146并且动作为DROP的规则。</h4>
+<h3 id="删除指定表的指定链中的所有规则-f选项表示清空对应链中的规则执行时需三思">删除指定表的指定链中的所有规则，-F选项表示清空对应链中的规则，执行时需三思。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -F 链名
+示例：iptables -t filter -F INPUT
+</code></pre></div><h2 id="修改规则">修改规则</h2>
+<h3 id="注意点如果使用-r选项修改规则中的动作那么必须指明原规则中的原匹配条件例如源ip目标ip等">注意点：如果使用-R选项修改规则中的动作，那么必须指明原规则中的原匹配条件，例如源IP，目标IP等。</h3>
+<h3 id="修改指定表中指定链的指定规则-r选项表示修改对应链中的规则使用-r选项时要同时指定对应的链以及规则对应的序号并且规则中原本的匹配条件不可省略">修改指定表中指定链的指定规则，-R选项表示修改对应链中的规则，使用-R选项时要同时指定对应的链以及规则对应的序号，并且规则中原本的匹配条件不可省略。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -R 链名 规则序号 规则原本的匹配条件 -j 动作
+示例：iptables -t filter -R INPUT 3 -s 192.168.1.146 -j ACCEPT
+</code></pre></div><h4 id="上述示例表示修改filter表中input链的第3条规则将这条规则的动作修改为accept--s-1921681146为这条规则中原本的匹配条件如果省略此匹配条件修改后的规则中的源地址可能会变为00000">上述示例表示修改filter表中INPUT链的第3条规则，将这条规则的动作修改为ACCEPT， -s 192.168.1.146为这条规则中原本的匹配条件，如果省略此匹配条件，修改后的规则中的源地址可能会变为0.0.0.0/0。</h4>
+<h4 id="其他修改规则的方法先通过编号删除规则再在原编号位置添加一条规则">其他修改规则的方法：先通过编号删除规则，再在原编号位置添加一条规则。</h4>
+<h3 id="修改指定表的指定链的默认策略默认动作并非修改规则可以使用如下命令">修改指定表的指定链的默认策略（默认动作），并非修改规则，可以使用如下命令。</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">命令语法：iptables -t 表名 -P 链名 动作
+示例：iptables -t filter -P FORWARD ACCEPT
+</code></pre></div><h4 id="上例表示将filter表中forward链的默认策略修改为accept">上例表示将filter表中FORWARD链的默认策略修改为ACCEPT</h4>
+<h2 id="保存规则">保存规则</h2>
+<h3 id="保存规则命令如下表示将iptables规则保存至etcsysconfigiptables文件中如果对应的操作没有保存那么当重启iptables服务以后">保存规则命令如下，表示将iptables规则保存至/etc/sysconfig/iptables文件中，如果对应的操作没有保存，那么当重启iptables服务以后</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">service iptables save
+</code></pre></div><h4 id="注意点centos7中使用默认使用firewalld如果想要使用上述命令保存规则需要安装iptables-servicesyum-install-iptables-services">注意点：centos7中使用默认使用firewalld，如果想要使用上述命令保存规则，需要安装iptables-services(yum install iptables-services)</h4>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">#配置好yum源以后安装iptables-service
+# yum install -y iptables-services
+#停止firewalld
+# systemctl stop firewalld
+#禁止firewalld自动启动
+# systemctl disable firewalld
+#启动iptables
+# systemctl start iptables
+#将iptables设置为开机自动启动，以后即可通过iptables-service控制iptables服务
+# systemctl enable iptables
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="/tags/iptables/">Iptables</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="doc_comments"></div>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>出埃及记</span>
+    </div>
+</footer>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+<link href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+<script src="/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>

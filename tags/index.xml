@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on JenG</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Nov 2021 15:09:31 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>股票</title>
+      <link>/tags/%E8%82%A1%E7%A5%A8/</link>
+      <pubDate>Mon, 22 Nov 2021 15:09:31 +0800</pubDate>
+      
+      <guid>/tags/%E8%82%A1%E7%A5%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>/tags/go/</link>
+      <pubDate>Tue, 31 Aug 2021 16:55:24 +0800</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Thu, 26 Aug 2021 17:41:58 +0800</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>/tags/redis/</link>
+      <pubDate>Fri, 30 Jul 2021 08:37:43 +0800</pubDate>
+      
+      <guid>/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>/tags/k8s/</link>
+      <pubDate>Sat, 12 Jun 2021 14:44:31 +0800</pubDate>
+      
+      <guid>/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 11 Jun 2021 17:24:26 +0800</pubDate>
+      
+      <guid>/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rancher</title>
+      <link>/tags/rancher/</link>
+      <pubDate>Tue, 08 Jun 2021 09:31:31 +0800</pubDate>
+      
+      <guid>/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CICD</title>
+      <link>/tags/cicd/</link>
+      <pubDate>Fri, 28 May 2021 10:18:52 +0800</pubDate>
+      
+      <guid>/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iptables</title>
+      <link>/tags/iptables/</link>
+      <pubDate>Tue, 18 May 2021 15:20:59 +0800</pubDate>
+      
+      <guid>/tags/iptables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 18 May 2021 15:20:37 +0800</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>哲学</title>
+      <link>/tags/%E5%93%B2%E5%AD%A6/</link>
+      <pubDate>Tue, 18 May 2021 15:17:59 +0800</pubDate>
+      
+      <guid>/tags/%E5%93%B2%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

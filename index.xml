@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JenG</title>
+    <link>/</link>
+    <description>Recent content on JenG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Nov 2021 15:09:31 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>股票</title>
+      <link>/posts/%E8%82%A1%E7%A5%A8/</link>
+      <pubDate>Mon, 22 Nov 2021 15:09:31 +0800</pubDate>
+      
+      <guid>/posts/%E8%82%A1%E7%A5%A8/</guid>
+      <description>股票学习记录，持续更新 1、2021-11-22 ` 1、华润三九，要看中长线的， 可以买个 一千股 放在那，等跌，这个票 可以看中长期，万一飙起来 可能 30-50 没啥问题 看他的月线，这种月线 就是标准的中长线票，拿得住 就能涨</description>
+    </item>
+    
+    <item>
+      <title>让GO开局就让代码有mvc的感觉</title>
+      <link>/posts/%E8%AE%A9go%E5%BC%80%E5%B1%80%E5%B0%B1%E8%AE%A9%E4%BB%A3%E7%A0%81%E6%9C%89mvc%E7%9A%84%E6%84%9F%E8%A7%89/</link>
+      <pubDate>Tue, 31 Aug 2021 16:55:24 +0800</pubDate>
+      
+      <guid>/posts/%E8%AE%A9go%E5%BC%80%E5%B1%80%E5%B0%B1%E8%AE%A9%E4%BB%A3%E7%A0%81%E6%9C%89mvc%E7%9A%84%E6%84%9F%E8%A7%89/</guid>
+      <description>让GO开局就让代码有mvc的感觉 package main import &amp;#34;net/http&amp;#34; // 开局就让代码有mvc的感觉 type IndexCtl struct { w http.ResponseWriter } func (this *IndexCtl) Index(req *http.Request) { this.w.Write([]byte(&amp;#34;this is index&amp;#34;)) } func (this *IndexCtl) Users(req *http.Request) { this.w.Write([]byte(&amp;#34;user-lise&amp;#34;)) } //转化函数 func web(f func(ctl *IndexCtl, req *http.Request)) http.Handler { return http.HandlerFunc(func(writer http.ResponseWriter, req *http.Request) { f(&amp;amp;IndexCtl{w: writer}, req) }) } func main() { router := http.NewServeMux() router.Handle(&amp;#34;/&amp;#34;, web((*IndexCtl).Index)) router.Handle(&amp;#34;/users&amp;#34;, web((*IndexCtl).Users)) http.ListenAndServe(&amp;#34;:8080&amp;#34;, router) }</description>
+    </item>
+    
+    <item>
+      <title>Go语言一些库</title>
+      <link>/posts/go%E8%AF%AD%E8%A8%80%E4%B8%80%E4%BA%9B%E5%BA%93/</link>
+      <pubDate>Fri, 27 Aug 2021 09:06:25 +0800</pubDate>
+      
+      <guid>/posts/go%E8%AF%AD%E8%A8%80%E4%B8%80%E4%BA%9B%E5%BA%93/</guid>
+      <description>查看包关系图 https://github.com/ofabry/go-callvis The purpose of this tool is to provide developers with a visual overview of a Go program using data from call graph and its relations with packages and types. curl-to-Go mholt.github.io/curl-to-go https://mholt.github.io/json-to-go/</description>
+    </item>
+    
+    <item>
+      <title>使用docker构建postman自动化测试环境</title>
+      <link>/posts/%E4%BD%BF%E7%94%A8docker%E6%9E%84%E5%BB%BApostman%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 26 Aug 2021 17:41:58 +0800</pubDate>
+      
+      <guid>/posts/%E4%BD%BF%E7%94%A8docker%E6%9E%84%E5%BB%BApostman%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/</guid>
+      <description>在 golang:1.14.4-alpine3.12 镜像基础上添加 gcc 如果你的镜像已经有了 gcc，则第一步，第二步跳过 第一步，编写 Dockerfile 文件 内容如下： FROM golang:1.14.4-alpine3.12 apk update apk add build-base 第二步 构建 coo-base 镜像 执行命令 docker build -t coo-base . 执行完毕之后，就会生成 coo-base 镜像，使用 docker images 查看 第三步 在 coo-base 镜像</description>
+    </item>
+    
+    <item>
+      <title>Redis删除策略</title>
+      <link>/posts/redis%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Fri, 30 Jul 2021 08:37:43 +0800</pubDate>
+      
+      <guid>/posts/redis%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/</guid>
+      <description>惰性删除 概念： 在获取某个 key 的时候，Redis 会检查下这个 key 是否过期了，如果过期了则删除，且不会返回任何东西。 优点：不会删除其他键，所以不会花费任何 CPU 时间在其他无关的过期键上。 缺点：大量过期键未被访问，</description>
+    </item>
+    
+    <item>
+      <title>Helm入门</title>
+      <link>/posts/helm%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sat, 12 Jun 2021 14:44:31 +0800</pubDate>
+      
+      <guid>/posts/helm%E5%85%A5%E9%97%A8/</guid>
+      <description>安装 到 github 去下载对应的二进制文件 https://github.com/helm/helm 这里我们下载 3.6 版本 把可执行文件移动到 /usr/local/bin/helm 查看版本 helm version 看到版本信息即可安装成功 准备好 Helm 后，您可以添加图表存储库。检查 Artifact Hub 以获取可用的 Helm 图表存储库 helm repo add stable http://mirror.azure.cn/kubernetes/charts/ helm repo update 查找mysq</description>
+    </item>
+    
+    <item>
+      <title>数据卷：挂载本地文件夹</title>
+      <link>/posts/%E6%95%B0%E6%8D%AE%E5%8D%B7%E6%8C%82%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Sat, 12 Jun 2021 08:01:23 +0800</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E6%8D%AE%E5%8D%B7%E6%8C%82%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>如何挂载本地文件 只需要在 yaml 文件里面添加两处 一处在 container 里面 另外一处添加到跟 container 同级 volumeMounts: - name: v1 mountPath: /app volumes: - name: v1 hostPath: path: /home/zzg/web 完整 yaml 文件如下 apiVersion: apps/v1 kind: Deployment metadata: name: mygin namespace: myweb spec: selector: matchLabels: app: mygin replicas: 1 template: metadata: labels: app: mygin spec: nodeSelector: name: a1 containers: - name: mygintest image: alpine:3.12 # 只有镜像不存在时进行</description>
+    </item>
+    
+    <item>
+      <title>主机调度nodeName和nodeSelector</title>
+      <link>/posts/%E4%B8%BB%E6%9C%BA%E8%B0%83%E5%BA%A6nodename%E5%92%8Cnodeselector/</link>
+      <pubDate>Sat, 12 Jun 2021 07:32:04 +0800</pubDate>
+      
+      <guid>/posts/%E4%B8%BB%E6%9C%BA%E8%B0%83%E5%BA%A6nodename%E5%92%8Cnodeselector/</guid>
+      <description>主机调度的选择 可以在 yaml 文件里面 spce（规格）节点下添加 nodeName: god2 #表示在节点2部署 或者可以指定节点标签的方式 怎么定义节点标签 获取标签列表 kubectl get node --show-labels 添加标签： kubectl label nodes &amp;lt;node-name&amp;gt; &amp;lt;label-key&amp;gt;=&amp;lt;label-value&amp;gt; kubectl label nodes god2 name=a2 删除标签 kubectl label nodes &amp;lt;node-name&amp;gt; &amp;lt;label-key&amp;gt;- kubectl label nodes dsjs name- 修</description>
+    </item>
+    
+    <item>
+      <title>controller、deployment、service入门</title>
+      <link>/posts/deploymentcontrollerservice%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Fri, 11 Jun 2021 18:03:33 +0800</pubDate>
+      
+      <guid>/posts/deploymentcontrollerservice%E5%85%A5%E9%97%A8/</guid>
+      <description>kube-controller-manager 是什么 在master中。 kube-controller-manager负责节点管理、pod复制和endpoint创建. 监控集群中各种资源的状态使之和定义的状态保持一致,.\ 如: 节点控制器（Node C</description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>/posts/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Fri, 11 Jun 2021 17:24:26 +0800</pubDate>
+      
+      <guid>/posts/%E9%9D%A2%E8%AF%95/</guid>
+      <description>消息队列 go channel go 锁 mysql优化 mysql主从 redis集群 CAP redis原子性 竞争饥饿模式 \ id a b</description>
+    </item>
+    
+    <item>
+      <title>kubelet初步了解</title>
+      <link>/posts/kubelet%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</link>
+      <pubDate>Fri, 11 Jun 2021 16:00:50 +0800</pubDate>
+      
+      <guid>/posts/kubelet%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3/</guid>
+      <description>kubelet 是什么 负责master和节点（node）之间的通信、交互和数据上报 到master的apiserver 主要职责是什么 1、Node管理 2、pod管理 3、容器健康检查 4、容器监控 5、资源清理 6、和容器运行</description>
+    </item>
+    
+    <item>
+      <title>Etcd</title>
+      <link>/posts/etcd/</link>
+      <pubDate>Thu, 10 Jun 2021 09:37:50 +0800</pubDate>
+      
+      <guid>/posts/etcd/</guid>
+      <description>etcd是什么 etcd是一个高可用的键值存储系统 它由CoreOS开发并维护的 灵感来自于 ZooKeeper 它使用Go语言编写 使用场景有那些 1、主要用于共享配置 2、服务注册与发现 3、分布式锁等 使用docke把镜像干下来 由</description>
+    </item>
+    
+    <item>
+      <title>K8s服务发现</title>
+      <link>/posts/k8s%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link>
+      <pubDate>Tue, 08 Jun 2021 16:34:40 +0800</pubDate>
+      
+      <guid>/posts/k8s%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid>
+      <description>在rancher中部署服务，会自动注册服务名称，如图所示： 你的程序想访问集群其他服务 只需要 访问服务名即可 如 mygo 是一个gin框架 http服务 你只需要请求 http://mygo 即可 自动会帮你进行服务发现 有时候访问不了，需要干掉</description>
+    </item>
+    
+    <item>
+      <title>Nfs主机挂载</title>
+      <link>/posts/nfs%E4%B8%BB%E6%9C%BA%E6%8C%82%E8%BD%BD/</link>
+      <pubDate>Tue, 08 Jun 2021 09:31:31 +0800</pubDate>
+      
+      <guid>/posts/nfs%E4%B8%BB%E6%9C%BA%E6%8C%82%E8%BD%BD/</guid>
+      <description>在k8s中，如果想要进行负载均衡，则需要在每台服务器创建相同的服务，每份代码都得 拷贝一遍，这样很繁琐 而使用nfs 进行网络文件挂载，则可以省去这些麻烦，只需要在一台服务器部署代码即可 现在准备god1，g</description>
+    </item>
+    
+    <item>
+      <title>Docker创建mysql</title>
+      <link>/posts/docker%E5%88%9B%E5%BB%BAmysql/</link>
+      <pubDate>Fri, 04 Jun 2021 10:13:45 +0800</pubDate>
+      
+      <guid>/posts/docker%E5%88%9B%E5%BB%BAmysql/</guid>
+      <description>docker run -p 3306:3306 -v /home/zzg/docker/mysql/data:/var/lib/mysql -v /home/zzg/docker/mysql/conf:/etc/mysql/conf.d &amp;ndash;name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6</description>
+    </item>
+    
+    <item>
+      <title>Kubenetes基础知识</title>
+      <link>/posts/kubenetes%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 31 May 2021 16:07:24 +0800</pubDate>
+      
+      <guid>/posts/kubenetes%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>kubennetes基础架构</description>
+    </item>
+    
+    <item>
+      <title>GithubWorkflow</title>
+      <link>/posts/githubworkflow/</link>
+      <pubDate>Fri, 28 May 2021 10:18:52 +0800</pubDate>
+      
+      <guid>/posts/githubworkflow/</guid>
+      <description>Github Workflow 可以实现流水线式的编译部署，实现生产自动化 首先在项目跟目录建立 .github/workflows 文件夹 然后在文件夹里面创建 action.yml 文件 文件里面的内容如下： name: &amp;#39;GitHub Actions auto push Bot&amp;#39; on: push: branches: - master # 在master 分支提交时触发事件 jobs: gitOperation: # job tag 标签，自定义即</description>
+    </item>
+    
+    <item>
+      <title>手工构建最基本的swoole镜像(基于alpine、PHP7)</title>
+      <link>/posts/%E6%89%8B%E5%B7%A5%E6%9E%84%E5%BB%BA%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84swoole%E9%95%9C%E5%83%8F%E5%9F%BA%E4%BA%8Ealpinephp7/</link>
+      <pubDate>Fri, 28 May 2021 09:28:47 +0800</pubDate>
+      
+      <guid>/posts/%E6%89%8B%E5%B7%A5%E6%9E%84%E5%BB%BA%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84swoole%E9%95%9C%E5%83%8F%E5%9F%BA%E4%BA%8Ealpinephp7/</guid>
+      <description>docker run -it --rm php:7.3-alpine3.8 php -v run运行 it交互式 &amp;ndash;rm容器停止删除 php:7.3-alpine3.8 运行哪个容器哪个标签 php -v 执行命令** 进入docker容器 docker attach xxx 运行多条命令 docker run -it --rm php:7.3-alpine3.8 sh -c &amp;#34;php -v &amp;amp;&amp;amp; php -m&amp;#34; 启动一容器并且执行sh docker run -it --rm php:7.3-alpine3.8 sh 容</description>
+    </item>
+    
+    <item>
+      <title>算法：合并K个升序链表</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 27 May 2021 18:04:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
+      <description>给你一个链表数组，每个链表都已经按升序排列。 请你将所有链表合并到一个升序链表中，返回合并后的链表。 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { if len(lists)==0{ return nil } result:=lists[0] for i:=1;i&amp;lt;len(lists);i++{ result=Merge(result,lists[i]) //每个都合并 } return result } func Merge(l1 *ListNode,l2 *ListNode)*ListNode{ //</description>
+    </item>
+    
+    <item>
+      <title>算法：两数相加</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
+      <pubDate>Wed, 26 May 2021 09:28:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
+      <description>两数相加 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。 请你将两个数相加，并以相同形式返回一个表示和的链表。 你可以假设除了数字 0 之外，这两个</description>
+    </item>
+    
+    <item>
+      <title>算法：两数之和</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Mon, 24 May 2021 13:27:04 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。 你可以</description>
+    </item>
+    
+    <item>
+      <title>从一个web项目来谈Go语言的技能点</title>
+      <link>/posts/%E4%BB%8E%E4%B8%80%E4%B8%AAweb%E9%A1%B9%E7%9B%AE%E6%9D%A5%E8%B0%88go%E8%AF%AD%E8%A8%80%E7%9A%84%E6%8A%80%E8%83%BD%E7%82%B9/</link>
+      <pubDate>Mon, 24 May 2021 13:18:00 +0800</pubDate>
+      
+      <guid>/posts/%E4%BB%8E%E4%B8%80%E4%B8%AAweb%E9%A1%B9%E7%9B%AE%E6%9D%A5%E8%B0%88go%E8%AF%AD%E8%A8%80%E7%9A%84%E6%8A%80%E8%83%BD%E7%82%B9/</guid>
+      <description>转自 Junedayday 公众号 从一个Web项目开始 经过了 入门篇 的学习，大家已经初步了解Go语言的语法，也能写常见的代码了。接下来，我们就从一个Web项目入手，看看一些常见的技能与知识吧。 我们先简单地聊一下这个Web项目</description>
+    </item>
+    
+    <item>
+      <title>算法：力扣160,相交链表</title>
+      <link>/posts/%E7%AE%97%E6%B3%95%E5%8A%9B%E6%89%A3160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 20 May 2021 09:26:05 +0800</pubDate>
+      
+      <guid>/posts/%E7%AE%97%E6%B3%95%E5%8A%9B%E6%89%A3160.%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/</guid>
+      <description>编写一个程序，找到两个单链表相交的起始节点。 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func getIntersectionNode(headA, headB *ListNode) *ListNode { curA, curB := headA, headB //当A链表不等于B链表，一直循环，如果两个链表相交 //它两必定相等，如果不相交，最后为nil</description>
+    </item>
+    
+    <item>
+      <title>Iptables防火墙学习</title>
+      <link>/posts/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 18 May 2021 15:20:59 +0800</pubDate>
+      
+      <guid>/posts/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0/</guid>
+      <description>iptables 表 filter 默认表 nat mangle raw iptable 链 INPUT OUTPUT PREROUTING FORWARD POSTROUTING 在指定表的指定链的尾部添加一条规则，-A选项表示在对应链的末尾添加规则，省略-t选项时，表示默认操作filter表中的规则 命令语法：iptables -t 表名 -A 链名 匹配条件</description>
+    </item>
+    
+    <item>
+      <title>Git学习记录</title>
+      <link>/posts/git%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 18 May 2021 15:20:37 +0800</pubDate>
+      
+      <guid>/posts/git%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>1、第一次下载安装需要配置用户跟邮箱 $ git config --global user.name &amp;#34;zhangsan&amp;#34; $ git config --global user.email &amp;#34;zhangsan@163.com&amp;#34; 2、git 添加文件提交 (如添加README.md文件) $ git add README.md $ git commit -m &amp;#34;add README.md&amp;#34; $ git push -u origin master（输入用户名密码） 3、git 删除远程文件 （如</description>
+    </item>
+    
+    <item>
+      <title>药师灌顶真言</title>
+      <link>/posts/%E8%8D%AF%E5%B8%88%E7%81%8C%E9%A1%B6%E7%9C%9F%E8%A8%80/</link>
+      <pubDate>Tue, 18 May 2021 15:17:59 +0800</pubDate>
+      
+      <guid>/posts/%E8%8D%AF%E5%B8%88%E7%81%8C%E9%A1%B6%E7%9C%9F%E8%A8%80/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;修学药师灌顶真言是药师法门的一部分，读诵修持有着极大的功德利益&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;内容&#34;&gt;内容&lt;/h1&gt;
+&lt;p&gt;南无薄伽伐帝鞞杀社&lt;/p&gt;
+&lt;p&gt;窭噜薜琉璃&lt;/p&gt;
+&lt;p&gt;跋喇婆&lt;/p&gt;
+&lt;p&gt;喝啰阇也&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>出埃及记 （圣经篇章）</title>
+      <link>/about/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>圣经』上记载的一些奇迹可以用科学去解释。摩西出埃及一直是个谜，根据『圣经』记载，摩西和他的同胞摆脱埃及长老的主宰，走上逃亡之路。前面是茫茫无涯的红海，后面是追兵，突然，海底现出，摩西得以带领众人穿越红</description>
+    </item>
+    
+  </channel>
+</rss>
